@@ -10,6 +10,7 @@ Building requires [CMake](http://cmake.org/) to be installed.
 python need to be installed with numpy libarary
 ```
 mkdir build && cd build
+sudo make all
 cmake .. -DCMAKE_BUILD_TYPE=Release
 cp pyrvo2*.so ../python
 ```
