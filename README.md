@@ -41,7 +41,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 Please send all bug reports for the Python wrapper to
-[Python-RVO2](https://github.com/sybrenstuvel/Python-RVO2), and bug
+[RVO2-pybind11](https://github.com/dongfangliu/RVO2-pybind11), and bug
 report for the RVO2 library itself to [geom@cs.unc.edu](mailto:geom@cs.unc.edu).
 
 The RVO2 authors may be contacted via:
