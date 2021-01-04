@@ -26,8 +26,10 @@ class TurtleBot:
 
         self.nodeName = 'turtle'+str(turtleId)
         self.vel_topic_name = "/"+self.nodeName+'/cmd_vel_mux/input/teleop'
+        # self.vel_topic_name = '/cmd_vel_mux/input/teleop'
         # self.pose_topic_name = "/"+self.nodeName+'/odom'
         self.odom_topic_name = "/"+self.nodeName+'/odom'
+        # self.odom_topic_name = '/odom'
         self.pose_topic_name = "/vrpn_client_node/"+self.nodeName+'/pose'
 
         # Publisher which will publish to the topic '/turtle1/cmd_vel'.
