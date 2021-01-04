@@ -1,14 +1,26 @@
-# RVO2-pybind11
-a pybind11 version of rvo2,just a wrapper,credit <http://gamma.cs.unc.edu/RVO2/>
+# NH-ORCA-python
+This is a pybind11 version of [rvo2](http://gamma.cs.unc.edu/RVO2/).
 
-using c++ standard 14
- require Eigen, openmp, numpy and pygame
+Based on the python wrapper, a **NH-ORCA** algorithm is implemented for <u>two-wheeled robots</u> (such as turtlebot) .
+
+Here is the [paper](https://ieeexplore.ieee.org/document/5652073). 
+
+The wrapper code can be checked as `py_wrapper.cpp`.
+
+NH Turtlebot control codes can be check under the `python` folder.
+
+It requires Eigen, openmp, numpy and pygame(for visualization).
+
+
 
 Build 
 ---------------------
 Building requires [CMake](http://cmake.org/) to be installed.
 python need to be installed with numpy libarary
 ```
+sudo apt-get install libeigen3-dev 
+pip install numpy 
+pip install pygame
 mkdir build && cd build
 sudo make all
 cmake .. -DCMAKE_BUILD_TYPE=Release
@@ -16,7 +28,28 @@ cp pyrvo2*.so ../python
 ```
 now you have the library in the python folder
 
+## Run Simulation
 
+```
+cd python
+jupyter
+# Then run the rvo2_circle.ipynb
+```
+
+## Run On Real TurtleBots
+
+For real use cases, you have to read the topics that in the `turtlebot.py`.
+
+Each robot of index X receive odom and pose from `/turtleX/odom` and `/vrpn_client_node/turtleX/pose`, pushlish control messages (Twist ) to the topic `/turtleX/cmd_vel_mux/input/teleop`.
+
+```
+cd python
+python turtleCtrl.py
+```
+
+## Data Saving 
+
+First record all data into a ros bag. Then  make use of the script `bag_to_csv.py` for data extraction.
 
 Optimal Reciprocal Collision Avoidance
 ======================================
