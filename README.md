@@ -22,8 +22,8 @@ sudo apt-get install libeigen3-dev
 pip install numpy 
 pip install pygame
 mkdir build && cd build
-sudo make all
 cmake .. -DCMAKE_BUILD_TYPE=Release
+sudo make all
 cp pyrvo2*.so ../python
 ```
 now you have the library in the python folder
